@@ -25,10 +25,15 @@ Gem::Specification.new do |s|
   # Dependencies required to build and run this gem
   s.add_dependency 'mini_portile2', '~> 2.8'
   s.add_dependency 'pkg-config', '~> 1.5'
-  s.add_dependency 'rubyzip', '~> 2.3'
+  # Build-time only (extconf.rb extracts the pinned libsecp256k1 archive).
+  # >= 3.4 carries the fix for CVE-2026-85396 / GHSA-47m2-wp7j-p9vc.
+  s.add_dependency 'rubyzip', '>= 3.4', '< 4'
 
   # Development dependencies
+  s.add_development_dependency 'base64' # RuboCop 0.78 on Ruby >= 3.4
+  s.add_development_dependency 'benchmark' # RuboCop 0.78 on Ruby >= 4.0
   s.add_development_dependency 'keccak', '~> 1.3'
+  s.add_development_dependency 'ostruct' # RuboCop 0.78 on Ruby >= 4.0
   s.add_development_dependency 'rake', '~> 13.0'
   s.add_development_dependency 'rake-compiler', '~> 1.2'
   s.add_development_dependency 'rspec', '~> 3.8'
