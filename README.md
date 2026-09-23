@@ -2,9 +2,10 @@
 
 > **Fork note (carter2099):** security-maintenance fork of
 > [etscrivner/rbsecp256k1](https://github.com/etscrivner/rbsecp256k1), which has
-> had no releases since 6.0.0 (2023). The only change so far raises the
-> build-time `rubyzip` dependency to `>= 3.4` (CVE-2026-85396). Consumers pin it
-> by commit, e.g. `gem "rbsecp256k1", github: "carter2099/rbsecp256k1", ref: "<sha>"`.
+> had no releases since 6.0.0 (2023). It raises the build-time `rubyzip`
+> dependency to `>= 3.4` (CVE-2026-85396) and, as of fork version 6.1.0, bundles
+> libsecp256k1 v0.8.0 (upstream bundles v0.2.0). Consumers pin it by commit,
+> e.g. `gem "rbsecp256k1", github: "carter2099/rbsecp256k1", ref: "<sha>"`.
 
 [![Spec](https://github.com/etscrivner/rbsecp256k1/actions/workflows/spec.yml/badge.svg?branch=master)](https://github.com/etscrivner/rbsecp256k1/actions/workflows/spec.yml) [![Gem Version](https://badge.fury.io/rb/rbsecp256k1.svg)](https://badge.fury.io/rb/rbsecp256k1) [![Maintainability](https://api.codeclimate.com/v1/badges/d4b6e27bfa00030ca412/maintainability)](https://codeclimate.com/github/etscrivner/rbsecp256k1/maintainability)
 
